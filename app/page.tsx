@@ -1,65 +1,103 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Database, Layers, Video } from "lucide-react";
 
-export default function Home() {
+const LAYERS = [
+  {
+    href: "/studio",
+    icon: Layers,
+    label: "Studio",
+    color: "text-violet-600 dark:text-violet-400",
+    bg: "bg-violet-50 dark:bg-violet-950/40",
+    border: "border-violet-100 dark:border-violet-900",
+    description:
+      "Configure campaigns, tasks, scenes, device tiers, diversity quotas, and quality criteria. Everything a researcher needs to define a collection run.",
+    cta: "Open Studio →",
+  },
+  {
+    href: "/capture",
+    icon: Video,
+    label: "Capture",
+    color: "text-blue-600 dark:text-blue-400",
+    bg: "bg-blue-50 dark:bg-blue-950/40",
+    border: "border-blue-100 dark:border-blue-900",
+    description:
+      "Demonstrator interface with live webcam, real-time MediaPipe hand tracking, per-frame quality chips, and automatic episode saving to IndexedDB.",
+    cta: "Start capturing →",
+  },
+  {
+    href: "/egodb",
+    icon: Database,
+    label: "EgoDB",
+    color: "text-indigo-600 dark:text-indigo-400",
+    bg: "bg-indigo-50 dark:bg-indigo-950/40",
+    border: "border-indigo-100 dark:border-indigo-900",
+    description:
+      "Review recorded episodes, run the quality-criteria acceptance gate, inspect the task × scene coverage heatmap, and export accepted metadata to JSON.",
+    cta: "Browse EgoDB →",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="mx-auto flex max-w-2xl flex-col gap-10 py-6">
+      {/* Hero */}
+      <div className="flex flex-col gap-2">
+        <h1 className="text-2xl font-bold tracking-tight">EgoForge</h1>
+        <p className="max-w-lg text-sm leading-relaxed text-muted-foreground">
+          A prototype platform for collecting egocentric human manipulation demonstrations
+          used to train robot manipulation policies. Three integrated layers take you
+          from campaign design through recording to dataset export.
+        </p>
+      </div>
+
+      {/* Layer cards */}
+      <div className="flex flex-col gap-4">
+        {LAYERS.map(({ href, icon: Icon, label, color, bg, border, description, cta }) => (
+          <Link
+            key={href}
+            href={href}
+            className={`group flex gap-4 rounded-xl border p-5 transition-shadow hover:shadow-md ${border}`}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <div className={`flex size-10 shrink-0 items-center justify-center rounded-lg ${bg}`}>
+              <Icon className={`size-5 ${color}`} />
+            </div>
+            <div className="flex min-w-0 flex-col gap-1">
+              <div className="flex items-center gap-2">
+                <span className="font-semibold">{label}</span>
+              </div>
+              <p className="text-sm text-muted-foreground">{description}</p>
+              <span className={`mt-1 text-xs font-medium ${color}`}>{cta}</span>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      {/* Real vs simulated callout */}
+      <div className="rounded-lg border border-dashed p-4">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+          Real vs simulated
+        </p>
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <div>
+            <p className="mb-1 text-xs font-medium text-emerald-600 dark:text-emerald-400">Real</p>
+            <ul className="space-y-0.5 text-xs text-muted-foreground">
+              <li>Webcam capture via getUserMedia</li>
+              <li>MediaPipe 21-keypoint hand tracking</li>
+              <li>Per-frame quality metrics from landmarks</li>
+              <li>IndexedDB persistence (Dexie.js)</li>
+              <li>Coverage analytics and acceptance gate</li>
+            </ul>
+          </div>
+          <div>
+            <p className="mb-1 text-xs font-medium text-amber-600 dark:text-amber-400">Simulated</p>
+            <ul className="space-y-0.5 text-xs text-muted-foreground">
+              <li>Device tiers (UI only, no hardware)</li>
+              <li>SLAM / camera pose estimation</li>
+              <li>Multi-site synchronisation</li>
+            </ul>
+          </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
