@@ -65,7 +65,7 @@ export function QuotasTab({ campaignId }: { campaignId: string }) {
     <div className="flex flex-col gap-6 pt-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Target className="size-4 text-muted-foreground" />
+          <Target className="size-4 text-primary/60" />
           <div>
             <h2 className="text-sm font-semibold">Quotas</h2>
             <p className="text-xs text-muted-foreground">
@@ -80,7 +80,7 @@ export function QuotasTab({ campaignId }: { campaignId: string }) {
 
       {noTasksOrScenes ? (
         <div className="flex flex-col items-center gap-2 rounded-lg border border-dashed py-14 text-center">
-          <Target className="size-6 text-muted-foreground/50" />
+          <Target className="size-6 text-primary/30" />
           <p className="text-sm text-muted-foreground">No tasks or scenes yet.</p>
           <p className="text-xs text-muted-foreground/70">
             Add tasks and scenes in their respective tabs first.
@@ -91,7 +91,7 @@ export function QuotasTab({ campaignId }: { campaignId: string }) {
           {/* Task targets */}
           {(tasks ?? []).length > 0 && (
             <section className="flex flex-col gap-3">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              <h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                 Task targets (episodes)
               </h3>
               <div className="flex flex-col divide-y rounded-lg border">
@@ -123,7 +123,7 @@ export function QuotasTab({ campaignId }: { campaignId: string }) {
           {/* Scene targets */}
           {(scenes ?? []).length > 0 && (
             <section className="flex flex-col gap-3">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              <h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                 Scene targets (episodes)
               </h3>
               <div className="flex flex-col divide-y rounded-lg border">

@@ -75,7 +75,7 @@ export function NewCampaignDialog() {
         </DialogHeader>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 pt-2">
           <div className="flex flex-col gap-1.5">
-            <label className="text-sm font-medium">Name</label>
+            <label className="font-mono text-xs font-medium tracking-wide text-muted-foreground">Name</label>
             <Input
               required
               placeholder="e.g. Tabletop manipulation v2"
@@ -84,7 +84,7 @@ export function NewCampaignDialog() {
             />
           </div>
           <div className="flex flex-col gap-1.5">
-            <label className="text-sm font-medium">Description</label>
+            <label className="font-mono text-xs font-medium tracking-wide text-muted-foreground">Description</label>
             <Textarea
               rows={3}
               placeholder="What data does this campaign collect?"
@@ -94,7 +94,7 @@ export function NewCampaignDialog() {
           </div>
           <div className="flex gap-4">
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium">Fidelity floor</label>
+              <label className="font-mono text-xs font-medium tracking-wide text-muted-foreground">Fidelity floor</label>
               <Select
                 value={fidelityFloor}
                 onValueChange={(v) => setFidelityFloor(v as "1" | "2" | "3")}
@@ -110,7 +110,7 @@ export function NewCampaignDialog() {
               </Select>
             </div>
             <div className="flex flex-1 flex-col gap-1.5">
-              <label className="text-sm font-medium">License</label>
+              <label className="font-mono text-xs font-medium tracking-wide text-muted-foreground">License</label>
               <Input
                 placeholder="CC-BY-4.0"
                 value={license}

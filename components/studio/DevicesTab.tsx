@@ -33,7 +33,7 @@ export function DevicesTab({ campaignId }: { campaignId: string }) {
     <div className="flex flex-col gap-6 pt-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Smartphone className="size-4 text-muted-foreground" />
+          <Smartphone className="size-4 text-primary/60" />
           <div>
             <h2 className="text-sm font-semibold">Device profiles</h2>
             <p className="text-xs text-muted-foreground">
@@ -48,7 +48,7 @@ export function DevicesTab({ campaignId }: { campaignId: string }) {
 
       {!devices || devices.length === 0 ? (
         <div className="flex flex-col items-center gap-2 rounded-lg border border-dashed py-14 text-center">
-          <Smartphone className="size-6 text-muted-foreground/50" />
+          <Smartphone className="size-6 text-primary/30" />
           <p className="text-sm text-muted-foreground">No device profiles yet.</p>
           <p className="text-xs text-muted-foreground/70">
             Device tiers are simulated — add profiles to document them.
@@ -69,7 +69,7 @@ export function DevicesTab({ campaignId }: { campaignId: string }) {
                       {tc.label}
                     </Badge>
                     <span className="text-sm font-medium">{device.deviceName}</span>
-                    <span className="text-xs text-muted-foreground">
+                    <span className="font-mono text-xs text-muted-foreground">
                       {tc.description}
                     </span>
                   </div>

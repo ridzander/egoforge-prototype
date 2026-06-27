@@ -25,13 +25,13 @@ function CampaignCard({
 }) {
   return (
     <Link href={`/studio/${campaign.id}`} className="group block">
-      <Card className="h-full transition-shadow group-hover:shadow-md">
+      <Card className="h-full border-border transition-colors group-hover:border-primary/30">
         <CardHeader className="pb-2">
           <div className="flex items-start justify-between gap-2">
             <CardTitle className="text-base leading-snug">
               {campaign.name}
             </CardTitle>
-            <Badge variant="secondary" className="shrink-0">
+            <Badge variant="secondary" className="shrink-0 font-mono text-xs">
               Floor {campaign.fidelityFloor}
             </Badge>
           </div>
@@ -42,22 +42,22 @@ function CampaignCard({
           )}
         </CardHeader>
         <CardContent>
-          <dl className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
+          <dl className="grid grid-cols-2 gap-x-4 gap-y-1">
             <div className="flex justify-between">
-              <dt className="text-muted-foreground">Tasks</dt>
-              <dd className="font-medium">{taskCount}</dd>
+              <dt className="font-mono text-xs text-muted-foreground">Tasks</dt>
+              <dd className="font-mono text-xs tabular-nums">{taskCount}</dd>
             </div>
             <div className="flex justify-between">
-              <dt className="text-muted-foreground">Scenes</dt>
-              <dd className="font-medium">{sceneCount}</dd>
+              <dt className="font-mono text-xs text-muted-foreground">Scenes</dt>
+              <dd className="font-mono text-xs tabular-nums">{sceneCount}</dd>
             </div>
             <div className="col-span-2 flex justify-between">
-              <dt className="text-muted-foreground">License</dt>
-              <dd className="font-medium">{campaign.license}</dd>
+              <dt className="font-mono text-xs text-muted-foreground">License</dt>
+              <dd className="font-mono text-xs">{campaign.license}</dd>
             </div>
             <div className="col-span-2 flex justify-between">
-              <dt className="text-muted-foreground">Created</dt>
-              <dd className="font-medium">
+              <dt className="font-mono text-xs text-muted-foreground">Created</dt>
+              <dd className="font-mono text-xs tabular-nums">
                 {new Date(campaign.createdAt).toLocaleDateString()}
               </dd>
             </div>
@@ -100,7 +100,7 @@ export default function StudioPage() {
         <p className="text-sm text-muted-foreground">Loading…</p>
       ) : campaigns.length === 0 ? (
         <div className="flex flex-col items-center gap-3 rounded-lg border border-dashed py-16 text-center">
-          <p className="text-sm text-muted-foreground">No campaigns yet.</p>
+          <p className="font-mono text-xs text-muted-foreground">No campaigns yet.</p>
           <NewCampaignDialog />
         </div>
       ) : (

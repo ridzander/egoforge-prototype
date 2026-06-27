@@ -99,7 +99,7 @@ export function TaskDialog({
           <div className="flex max-h-[calc(85vh-9rem)] flex-col gap-5 overflow-y-auto px-6 py-5">
             {/* Name */}
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium">Name</label>
+              <label className="font-mono text-xs font-medium tracking-wide text-muted-foreground">Name</label>
               <Input
                 required
                 placeholder="e.g. cup-on-saucer"
@@ -110,7 +110,7 @@ export function TaskDialog({
 
             {/* Instructions */}
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium">Instructions</label>
+              <label className="font-mono text-xs font-medium tracking-wide text-muted-foreground">Instructions</label>
               <Textarea
                 rows={3}
                 placeholder="Step-by-step instructions shown to the demonstrator."
@@ -121,7 +121,7 @@ export function TaskDialog({
 
             {/* Reset type */}
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium">Reset type</label>
+              <label className="font-mono text-xs font-medium tracking-wide text-muted-foreground">Reset type</label>
               <Select
                 value={resetType}
                 onValueChange={(v) => setResetType(v as Task["resetType"])}
@@ -141,7 +141,7 @@ export function TaskDialog({
             {/* Horizon + Bimanual */}
             <div className="grid grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
-                <label className="text-sm font-medium">Horizon (seconds)</label>
+                <label className="font-mono text-xs font-medium tracking-wide text-muted-foreground">Horizon (seconds)</label>
                 <Input
                   type="number"
                   min={1}
@@ -153,7 +153,7 @@ export function TaskDialog({
                 />
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-sm font-medium">Bimanual</label>
+                <label className="font-mono text-xs font-medium tracking-wide text-muted-foreground">Bimanual</label>
                 <div className="flex h-9 overflow-hidden rounded-lg border border-input text-sm">
                   <button
                     type="button"
@@ -185,7 +185,7 @@ export function TaskDialog({
 
             {/* Object set */}
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium">Object set</label>
+              <label className="font-mono text-xs font-medium tracking-wide text-muted-foreground">Object set</label>
               <TagInput
                 value={objectSet}
                 onChange={setObjectSet}
@@ -195,7 +195,7 @@ export function TaskDialog({
 
             {/* Success criteria */}
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium">Success criteria</label>
+              <label className="font-mono text-xs font-medium tracking-wide text-muted-foreground">Success criteria</label>
               <Textarea
                 rows={2}
                 placeholder="How do we know the task succeeded?"
@@ -206,11 +206,9 @@ export function TaskDialog({
 
             {/* Exemplar URL */}
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium">
+              <label className="font-mono text-xs font-medium tracking-wide text-muted-foreground">
                 Exemplar URL{" "}
-                <span className="font-normal text-muted-foreground">
-                  (optional)
-                </span>
+                <span className="font-normal opacity-60">(optional)</span>
               </label>
               <Input
                 type="url"

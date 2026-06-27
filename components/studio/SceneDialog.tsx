@@ -69,7 +69,7 @@ export function SceneDialog({
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col gap-5 px-6 py-5">
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium">Name</label>
+              <label className="font-mono text-xs font-medium tracking-wide text-muted-foreground">Name</label>
               <Input
                 required
                 placeholder="e.g. kitchen-counter"
@@ -78,7 +78,7 @@ export function SceneDialog({
               />
             </div>
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium">Workspace dimensions</label>
+              <label className="font-mono text-xs font-medium tracking-wide text-muted-foreground">Workspace dimensions</label>
               <Input
                 placeholder="e.g. 40x60cm"
                 value={workspaceDims}
@@ -86,7 +86,7 @@ export function SceneDialog({
               />
             </div>
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium">Constraints</label>
+              <label className="font-mono text-xs font-medium tracking-wide text-muted-foreground">Constraints</label>
               <Textarea
                 rows={3}
                 placeholder="Describe physical setup requirements."

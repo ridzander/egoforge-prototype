@@ -33,7 +33,7 @@ export function ScenesTab({ campaignId }: { campaignId: string }) {
     <div className="flex flex-col gap-6 pt-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <MapPin className="size-4 text-muted-foreground" />
+          <MapPin className="size-4 text-primary/60" />
           <div>
             <h2 className="text-sm font-semibold">Scenes</h2>
             <p className="text-xs text-muted-foreground">
@@ -48,7 +48,7 @@ export function ScenesTab({ campaignId }: { campaignId: string }) {
 
       {!scenes || scenes.length === 0 ? (
         <div className="flex flex-col items-center gap-2 rounded-lg border border-dashed py-14 text-center">
-          <MapPin className="size-6 text-muted-foreground/50" />
+          <MapPin className="size-6 text-primary/30" />
           <p className="text-sm text-muted-foreground">No scenes yet.</p>
           <p className="text-xs text-muted-foreground/70">
             Add a scene to describe where tasks will be recorded.
@@ -65,7 +65,7 @@ export function ScenesTab({ campaignId }: { campaignId: string }) {
                 <div className="flex flex-wrap items-center gap-1.5">
                   <span className="text-sm font-medium">{scene.name}</span>
                   {scene.workspaceDims && (
-                    <Badge variant="outline" className="text-xs font-normal">
+                    <Badge variant="outline" className="font-mono text-xs font-normal">
                       {scene.workspaceDims}
                     </Badge>
                   )}

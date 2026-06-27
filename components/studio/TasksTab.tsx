@@ -39,7 +39,7 @@ export function TasksTab({ campaignId }: { campaignId: string }) {
       {/* Section header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <ClipboardList className="size-4 text-muted-foreground" />
+          <ClipboardList className="size-4 text-primary/60" />
           <div>
             <h2 className="text-sm font-semibold">Tasks</h2>
             <p className="text-xs text-muted-foreground">
@@ -55,7 +55,7 @@ export function TasksTab({ campaignId }: { campaignId: string }) {
       {/* Task list */}
       {!tasks || tasks.length === 0 ? (
         <div className="flex flex-col items-center gap-2 rounded-lg border border-dashed py-14 text-center">
-          <ClipboardList className="size-6 text-muted-foreground/50" />
+          <ClipboardList className="size-6 text-primary/30" />
           <p className="text-sm text-muted-foreground">No tasks yet.</p>
           <p className="text-xs text-muted-foreground/70">
             Add a task to define what demonstrators should do.
@@ -80,7 +80,7 @@ export function TasksTab({ campaignId }: { campaignId: string }) {
                     <Badge variant="outline" className="text-xs font-normal">
                       {task.bimanual ? "Bimanual" : "Single-hand"}
                     </Badge>
-                    <span className="text-xs text-muted-foreground">
+                    <span className="font-mono text-xs text-muted-foreground tabular-nums">
                       {task.horizonSeconds}s
                     </span>
                   </div>

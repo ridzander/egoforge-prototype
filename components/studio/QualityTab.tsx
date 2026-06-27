@@ -63,7 +63,7 @@ export function QualityTab({ campaignId }: { campaignId: string }) {
     <div className="flex flex-col gap-6 pt-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <ShieldCheck className="size-4 text-muted-foreground" />
+          <ShieldCheck className="size-4 text-primary/60" />
           <div>
             <h2 className="text-sm font-semibold">Quality criteria</h2>
             <p className="text-xs text-muted-foreground">
@@ -76,14 +76,14 @@ export function QualityTab({ campaignId }: { campaignId: string }) {
         </Button>
       </div>
 
-      <div className="flex flex-col gap-6 rounded-lg border p-5">
+      <div className="flex flex-col gap-6 rounded-lg border border-border bg-card p-5">
         {/* Hand visibility */}
         <div className="flex flex-col gap-2">
           <div className="flex items-center justify-between">
             <label className="text-sm font-medium">
               Min hand visibility
             </label>
-            <span className="text-sm tabular-nums text-muted-foreground">
+            <span className="font-mono text-sm tabular-nums text-muted-foreground">
               {Math.round(minHandVisibilityPct)}%
             </span>
           </div>
@@ -110,7 +110,7 @@ export function QualityTab({ campaignId }: { campaignId: string }) {
             <label className="text-sm font-medium">
               Min tracking confidence
             </label>
-            <span className="text-sm tabular-nums text-muted-foreground">
+            <span className="font-mono text-sm tabular-nums text-muted-foreground">
               {minTrackingConfidence.toFixed(2)}
             </span>
           </div>

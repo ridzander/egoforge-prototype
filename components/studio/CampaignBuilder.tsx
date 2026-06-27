@@ -52,11 +52,11 @@ export function CampaignBuilder({ campaignId }: { campaignId: string }) {
             <h1 className="text-xl font-semibold leading-tight">
               {campaign.name}
             </h1>
-            <p className="text-xs text-muted-foreground">Campaign builder</p>
+            <p className="font-mono text-xs text-muted-foreground">Campaign builder</p>
           </div>
         </div>
         <div className="flex items-center gap-2 pt-1">
-          <span className="text-sm text-muted-foreground">Fidelity floor</span>
+          <span className="font-mono text-xs text-muted-foreground tracking-wide">Fidelity floor</span>
           <Select
             value={String(campaign.fidelityFloor)}
             onValueChange={updateFidelityFloor}

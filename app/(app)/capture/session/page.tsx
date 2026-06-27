@@ -255,11 +255,11 @@ export default function SessionPage() {
             {task?.name ?? "…"}
           </h1>
           <div className="flex flex-wrap items-center gap-1.5">
-            <span className="text-xs text-muted-foreground">
+            <span className="font-mono text-xs text-muted-foreground">
               {task?.bimanual ? "Bimanual" : "Single-hand"}
             </span>
             <span className="text-muted-foreground/40">·</span>
-            <span className="text-xs text-muted-foreground">
+            <span className="font-mono text-xs text-muted-foreground">
               {task?.horizonSeconds}s horizon
             </span>
             <span className="text-muted-foreground/40">·</span>

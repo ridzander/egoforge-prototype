@@ -27,20 +27,17 @@ export const TIER_CONFIG: Record<
   1: {
     label: "Tier 1",
     description: "Research headset",
-    badgeCls:
-      "border-violet-300 bg-violet-50 text-violet-700 dark:border-violet-800 dark:bg-violet-950/60 dark:text-violet-300",
+    badgeCls: "border-primary/40 bg-primary/10 text-primary font-mono",
   },
   2: {
     label: "Tier 2",
     description: "Lightweight glasses",
-    badgeCls:
-      "border-blue-300 bg-blue-50 text-blue-700 dark:border-blue-800 dark:bg-blue-950/60 dark:text-blue-300",
+    badgeCls: "border-border bg-secondary text-foreground font-mono",
   },
   3: {
     label: "Tier 3",
     description: "Phone",
-    badgeCls:
-      "border-slate-300 bg-slate-50 text-slate-600 dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-300",
+    badgeCls: "border-muted-foreground/30 bg-muted text-muted-foreground font-mono",
   },
 };
 
@@ -102,7 +99,7 @@ export function DeviceDialog({
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col gap-5 px-6 py-5">
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium">Tier</label>
+              <label className="font-mono text-xs font-medium tracking-wide text-muted-foreground">Tier</label>
               <Select
                 value={tier}
                 onValueChange={(v) => setTier(v as "1" | "2" | "3")}
@@ -118,7 +115,7 @@ export function DeviceDialog({
               </Select>
             </div>
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium">Device name</label>
+              <label className="font-mono text-xs font-medium tracking-wide text-muted-foreground">Device name</label>
               <Input
                 required
                 placeholder="e.g. Meta Quest Pro"
@@ -127,7 +124,7 @@ export function DeviceDialog({
               />
             </div>
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium">Notes</label>
+              <label className="font-mono text-xs font-medium tracking-wide text-muted-foreground">Notes</label>
               <Textarea
                 rows={3}
                 placeholder="Camera specs, known limitations, setup notes…"

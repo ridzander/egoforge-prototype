@@ -54,3 +54,43 @@ Three layers:
 - Episode: id, unitId, campaignId, taskId, sceneId, demonstratorId, videoBlobKey,
   durationSec, qualityMetrics { handVisibilityPct, avgConfidence, framingOk },
   qaStatus ('pending'|'accepted'|'rejected'), createdAt
+
+## Design system
+
+### Dark mode
+Dark mode is forced by `class="dark"` on `<html>` in `app/layout.tsx`. Do not add
+a theme toggle — EgoForge is always dark.
+
+### Fonts
+| Role      | Family          | next/font variable | Tailwind alias |
+|-----------|-----------------|--------------------|----------------|
+| Body/UI   | Geist Sans      | `--font-geist`     | `font-sans`    |
+| Code/mono | JetBrains Mono  | `--font-mono`      | `font-mono`    |
+
+Both are loaded in `app/layout.tsx` via `next/font/google`. The `@theme inline`
+block in `globals.css` maps `--font-sans → var(--font-geist)` and
+`--font-mono → var(--font-mono)`.
+
+### Radius
+`--radius: 0.5rem` (set in `:root`). Scale: sm×0.6, md×0.8, lg×1.0, xl×1.4,
+2xl×1.8, 3xl×2.2, 4xl×2.6.
+
+### Dark palette (hex → stored as oklch in `globals.css` `.dark` block)
+| Token                | Hex       | Role                          |
+|----------------------|-----------|-------------------------------|
+| `--background`       | `#0b141c` | Page/app background           |
+| `--foreground`       | `#dae3ee` | Body text                     |
+| `--card`             | `#141c24` | Card / panel surface          |
+| `--popover`          | `#222b33` | Popover / dropdown surface    |
+| `--primary`          | `#00e1ab` | Brand green-teal (CTAs)       |
+| `--primary-foreground` | `#003828` | Text on primary             |
+| `--secondary`        | `#2d363e` | Secondary surface / chips     |
+| `--muted`            | `#182028` | Subtle background             |
+| `--muted-foreground` | `#b9cbc1` | Placeholder / secondary text  |
+| `--accent`           | `#222b33` | Hover accent surface          |
+| `--destructive`      | `#ffb4ab` | Error / reject                |
+| `--border`           | `#3a4a43` | Borders, dividers             |
+| `--input`            | `#2d363e` | Input background              |
+| `--ring`             | `#00e1ab` | Focus ring (matches primary)  |
+
+Sidebar mirrors card/muted; chart series step through lighter→darker teal/green.

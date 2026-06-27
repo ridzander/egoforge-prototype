@@ -9,7 +9,7 @@ function chip(ok: boolean, warn: boolean, label: string) {
     ? "bg-amber-400/80 text-black"
     : "bg-red-500/80 text-white";
   return (
-    <span key={label} className={`rounded px-1.5 py-0.5 text-[10px] font-medium ${cls}`}>
+    <span key={label} className={`rounded-sm px-1.5 py-0.5 font-mono text-[10px] font-medium ${cls}`}>
       {label}
     </span>
   );

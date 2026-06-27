@@ -25,10 +25,12 @@ export function EpisodeList({ unitId, targetEpisodes }: EpisodeListProps) {
   const pct = targetEpisodes > 0 ? Math.min(1, count / targetEpisodes) : 0;
 
   return (
-    <div className="flex flex-col gap-3 rounded-lg border p-4">
+    <div className="flex flex-col gap-3 rounded-lg border border-border bg-card p-4">
       <div className="flex items-center justify-between">
-        <span className="text-sm font-medium">Episodes recorded</span>
-        <span className="tabular-nums text-sm text-muted-foreground">
+        <span className="font-mono text-xs font-medium tracking-wide text-muted-foreground">
+          Episodes recorded
+        </span>
+        <span className="font-mono text-xs tabular-nums text-muted-foreground">
           {count} / {targetEpisodes}
         </span>
       </div>
@@ -51,9 +53,9 @@ export function EpisodeList({ unitId, targetEpisodes }: EpisodeListProps) {
             <div
               key={ep.id}
               className={cn(
-                "flex items-center gap-1 rounded-md border px-2 py-0.5 text-xs",
+                "flex items-center gap-1 rounded-sm border px-2 py-0.5 font-mono text-[10px]",
                 ep.qaStatus === "accepted"
-                  ? "border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300"
+                  ? "border-emerald-800 bg-emerald-950/50 text-emerald-300"
                   : "border-border bg-muted/50 text-muted-foreground"
               )}
             >
@@ -69,7 +71,7 @@ export function EpisodeList({ unitId, targetEpisodes }: EpisodeListProps) {
       )}
 
       {pct >= 1 && (
-        <p className="text-xs font-medium text-emerald-600 dark:text-emerald-400">
+        <p className="font-mono text-xs font-medium text-primary">
           Target reached!
         </p>
       )}

@@ -38,7 +38,7 @@ export function RecordButton({
         aria-label={isRecording ? `Recording: ${formatTime(elapsedSec)}` : ""}
       >
         <span className="size-2 animate-pulse rounded-full bg-red-500" />
-        <span className="tabular-nums text-red-500">
+        <span className="font-mono tabular-nums text-red-500">
           REC {formatTime(elapsedSec)}
         </span>
       </div>
@@ -67,7 +67,7 @@ export function RecordButton({
         )}
       </button>
 
-      <p className="text-xs text-muted-foreground">
+      <p className="font-mono text-xs text-muted-foreground">
         {isRecording
           ? "Tap to stop"
           : disabled

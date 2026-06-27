@@ -52,13 +52,13 @@ export function CameraPreview({
 
       {/* Tracker status — bottom-left, only while camera is live */}
       {live && trackerStatus === "loading" && (
-        <div className="absolute bottom-2 left-2 flex items-center gap-1.5 rounded bg-black/60 px-2 py-1 text-[10px] text-white/80">
+        <div className="absolute bottom-2 left-2 flex items-center gap-1.5 rounded-sm bg-black/60 px-2 py-1 font-mono text-[10px] text-white/80">
           <Loader2 className="size-3 animate-spin" />
           Initialising hand tracker…
         </div>
       )}
       {live && trackerStatus === "error" && (
-        <div className="absolute bottom-2 left-2 rounded bg-black/60 px-2 py-1 text-[10px] text-red-400">
+        <div className="absolute bottom-2 left-2 rounded-sm bg-black/60 px-2 py-1 font-mono text-[10px] text-red-400">
           Hand tracking unavailable
         </div>
       )}
